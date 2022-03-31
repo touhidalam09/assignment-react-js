@@ -2,7 +2,9 @@ import React from "react";
 import Wrapper from "../../components/layouts/Wrapper";
 import { UseForm, Form } from "../../components/controls/UseForm";
 import Controls from "../../components/controls/controls";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useUserAuth } from "../../context/UserAuthContext";
+import { async } from "@firebase/util";
 
 const initializeValue = {
   email: "",
@@ -10,6 +12,9 @@ const initializeValue = {
 };
 
 function Login() {
+  const { signIn } = useUserAuth();
+  const navigate = useNavigate();
+
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
 
@@ -39,8 +44,16 @@ function Login() {
     validate
   );
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (validate()) {
+      try {
+        await signIn(values.email, values.password);
+        navigate("dashboard");
+      } catch (error) {
+        window.alert(error.message);
+      }
+    }
   };
 
   return (
@@ -55,6 +68,7 @@ function Login() {
                   <Form onSubmit={handleSubmit} className="mt-4">
                     <div className="form-group mb-4">
                       <Controls.Input
+                        required
                         type="email"
                         placeholder="Email"
                         name="email"

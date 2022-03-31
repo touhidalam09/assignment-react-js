@@ -15,11 +15,6 @@ function Dashboard(props) {
           <Header />
           {/* Page Content  */}
           <div className="main-content spacer-bottom">
-            {/* <h1 className="text-center text-muted">Welcome To Dashboard</h1> */}
-            {/* 
-              The parent route (<Parent>) is responsible for making sure
-              the matching child route is rendered with <Outlet>. 
-          */}
             <Outlet />
             {/* {children} */}
           </div>

@@ -67,14 +67,12 @@ function Product(props) {
                     onClick={() => handleUpdate()}
                   />
                 </Link>
-                {/* <i className="fa-light fa-pencil"></i> */}
                 &nbsp;
                 <Controls.Button
                   className="btn btn-danger btn-sm"
                   text="Delete"
                   onClick={() => handleDelete()}
                 />
-                {/* <i className="fa-thin fa-trash"></i> */}
               </td>
             </tr>
           </tbody>
