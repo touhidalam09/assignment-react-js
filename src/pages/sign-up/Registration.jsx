@@ -57,7 +57,7 @@ function Registration() {
   return (
     <Wrapper title="Register an account">
       <div className="container">
-        <div className="w-100 min-vh-100 d-flex align-items-center justify-content-center">
+        <div className="w-100 min-vh-100 d-flex align-items-center justify-content-center mb-4">
           <div className="row w-100">
             <div className="col-lg-5 col-md-9 col-sm-11 m-auto">
               <div className="mt-3 p-5 card">
@@ -115,10 +115,11 @@ function Registration() {
                       I accept the Terms of Service and Privacy Policy{" "}
                     </label>
                   </div>
-
-                  <button type="submit" className="w-100 btn btn-success">
-                    Register
-                  </button>
+                  <Controls.Button
+                    type="submit"
+                    text="Registration"
+                    className="w-100 btn btn-success"
+                  />
                 </Form>
               </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-function useTable(tableTitle, headerCells) {
+function UseTable(tableTitle, headerCells) {
   const TblContainer = (props) => (
     <>
       <div className="text-center py-2">
@@ -29,4 +29,4 @@ function useTable(tableTitle, headerCells) {
   return { TblContainer, TblHead };
 }
 
-export default useTable;
+export default UseTable;

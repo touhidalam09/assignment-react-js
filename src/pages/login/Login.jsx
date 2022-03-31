@@ -10,7 +10,6 @@ const initializeValue = {
 };
 
 function Login() {
-
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
 
@@ -40,9 +39,9 @@ function Login() {
     validate
   );
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
@@ -74,9 +73,11 @@ function Login() {
                         error={errors.password}
                       />
                     </div>
-                    <button type="submit" className="w-100 btn btn-success">
-                      Login
-                    </button>
+                    <Controls.Button
+                      className="w-100 btn btn-success"
+                      type="submit"
+                      text="Login"
+                    />
                   </Form>
                 </div>
 
