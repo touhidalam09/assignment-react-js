@@ -29,11 +29,11 @@ function Sidebar() {
       <div className="language-picker js-language-picker text-center py-2 language">
         <label htmlFor="language-picker-select">language</label>
         <select name="language-picker-select" id="language-picker-select">
-          <option lang="BN" value="bengali">
-            Bengali
-          </option>
           <option lang="en" value="english">
             English
+          </option>
+          <option lang="BN" value="bengali">
+            Bengali
           </option>
         </select>
       </div>
