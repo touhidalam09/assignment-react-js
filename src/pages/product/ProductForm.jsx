@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 import Controls from "../../components/controls/controls";
 import { UseForm, Form } from "../../components/controls/UseForm";
 
@@ -13,15 +14,31 @@ const initializeValue = {
 };
 
 function ProductForm(props) {
+  const [createOrEditProduct, recordsForEdit] = useOutletContext();
+
   const { values, setValues, handleInputChange, resetForm } = UseForm(
     initializeValue
   );
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    createOrEditProduct(values, resetForm);
   };
+
+  useEffect(() => {
+    if (recordsForEdit !== null) {
+      setValues({
+        ...recordsForEdit,
+      });
+    }
+  }, [recordsForEdit]);
+
   return (
     <>
       <div className="p-5 card">
+        <h5 className="text-muted">
+          {recordsForEdit !== null ? "Update Product" : "Add new Product"}
+        </h5>
         <Form onSubmit={handleSubmit} className="mt-4">
           <div className="form-group mb-4">
             <Controls.Input
@@ -83,7 +100,7 @@ function ProductForm(props) {
             />
           </div>
           <Controls.Button
-            text="Add"
+            text={recordsForEdit !== null ? "Update" : "Add"}
             type="submit"
             className="w-100 btn btn-danger custom-btn"
           />

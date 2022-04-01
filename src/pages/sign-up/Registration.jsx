@@ -4,6 +4,8 @@ import { UseForm, Form } from "../../components/controls/UseForm";
 import Controls from "../../components/controls/controls";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthContext";
+import { db } from "../../firebase/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 const initializeValue = {
   username: "",
@@ -15,6 +17,8 @@ const initializeValue = {
 function Registration() {
   const navigate = useNavigate();
   const { signUp } = useUserAuth();
+
+  const usersCollectionRef = collection(db, "users");
 
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
@@ -49,7 +53,7 @@ function Registration() {
       return Object.values(temp).every((x) => x === "");
   };
 
-  const { values, errors, setErrors, handleInputChange, resetForm } = UseForm(
+  const { values, errors, setErrors, handleInputChange } = UseForm(
     initializeValue,
     true,
     validate
@@ -58,8 +62,14 @@ function Registration() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
+      const { username, email, mobile } = values;
       try {
         await signUp(values.email, values.password);
+        await addDoc(usersCollectionRef, {
+          username,
+          email,
+          mobile,
+        });
         navigate("/dashboard");
       } catch (error) {
         window.alert(error.message);

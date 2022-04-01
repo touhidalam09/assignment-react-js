@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UseTable from "../../components/controls/UseTable";
+import { db } from "../../firebase/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const headerCells = [
   { id: "#", label: "#" },
@@ -7,19 +9,33 @@ const headerCells = [
   { id: "email", label: "Email" },
   { id: "mobile", label: "Mobile" },
 ];
-function UserPage(props) {
+
+function UserPage() {
   const { TblContainer, TblHead } = UseTable("users", headerCells);
+
+  const [userRecords, setUserRecords] = useState([]);
+  const usersCollectionRef = collection(db, "users");
+  // get all products
+  const getUsers = async () => {
+    const data = await getDocs(usersCollectionRef);
+    setUserRecords(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
+  useEffect(() => {
+    getUsers();
+  }, []);
   return (
     <>
       <TblContainer>
         <TblHead />
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Name simple</td>
-            <td>a@gmail.com</td>
-            <td>01298349983</td>
-          </tr>
+          {userRecords.map((user, index) => (
+            <tr key={index}>
+              <td>{(index = index + 1)}</td>
+              <td>{user.username}</td>
+              <td>{user.email}</td>
+              <td>{user.mobile}</td>
+            </tr>
+          ))}
         </tbody>
       </TblContainer>
     </>

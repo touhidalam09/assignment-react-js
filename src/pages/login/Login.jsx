@@ -4,7 +4,6 @@ import { UseForm, Form } from "../../components/controls/UseForm";
 import Controls from "../../components/controls/controls";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthContext";
-import { async } from "@firebase/util";
 
 const initializeValue = {
   email: "",
@@ -38,7 +37,7 @@ function Login() {
       return Object.values(temp).every((x) => x === "");
   };
 
-  const { values, errors, setErrors, handleInputChange, resetForm } = UseForm(
+  const { values, errors, setErrors, handleInputChange } = UseForm(
     initializeValue,
     true,
     validate

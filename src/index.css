@@ -103,7 +103,7 @@ tbody > tr:hover {
   position: absolute;
   left: 0px;
   width: var(--sidebar-width);
-  height: 100%;
+  min-height: 100%;
   background-color: #253053;
 }
 .brand {
@@ -124,4 +124,14 @@ tbody > tr:hover {
 .main-content {
   padding-top: 40px;
   margin-left: var(--main-content-margin-left);
+}
+.opacity {
+  opacity: 0.7;
+}
+.opacity:hover {
+  opacity: 1;
+}
+.language {
+  position: relative;
+  top: 350px;
 }

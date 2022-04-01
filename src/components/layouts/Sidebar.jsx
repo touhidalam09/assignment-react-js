@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Controls from "../controls/controls";
 
-function Sidebar(props) {
+function Sidebar() {
   const navigate = useNavigate();
   return (
     <div className="sidebar">
@@ -25,6 +25,18 @@ function Sidebar(props) {
           />
         </li>
       </ul>
+
+      <div className="language-picker js-language-picker text-center py-2 language">
+        <label htmlFor="language-picker-select">language</label>
+        <select name="language-picker-select" id="language-picker-select">
+          <option lang="BN" value="bengali">
+            Bengali
+          </option>
+          <option lang="en" value="english">
+            English
+          </option>
+        </select>
+      </div>
     </div>
   );
 }
