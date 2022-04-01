@@ -43,6 +43,10 @@
     ```
     npm install firebase
     ```
+  - ### Format JS
+    ```
+    npm i -S react react-intl
+    ```
 
 ## Branch Details
   - ### `main :`
@@ -51,3 +55,5 @@
     - Login Page, Registration page, dashboard, user page, product page , product form etc.
   - ### `fireBase :`
     - fireBase use for backend, CRUD operation, login, registration, authentication, hosting.
+  - ### `lang :`
+    - language package install and setup.
