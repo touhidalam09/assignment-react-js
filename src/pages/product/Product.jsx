@@ -41,6 +41,7 @@ function Product(props) {
       navigate("add");
     } else {
       navigate(-1);
+      setRecordsForEdit(null);
     }
   };
   // get all products

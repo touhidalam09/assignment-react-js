@@ -16,9 +16,8 @@ const initializeValue = {
 function ProductForm(props) {
   const [createOrEditProduct, recordsForEdit] = useOutletContext();
 
-  const { values, setValues, handleInputChange, resetForm } = UseForm(
-    initializeValue
-  );
+  const { values, setValues, handleInputChange, resetForm } =
+    UseForm(initializeValue);
 
   const handleSubmit = (e) => {
     e.preventDefault();
