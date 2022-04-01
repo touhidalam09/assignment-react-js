@@ -79,6 +79,7 @@ function Product(props) {
           listPrice,
           quantity,
         });
+        setRecordsForEdit(null);
       }
       resetForm();
       getProducts();
