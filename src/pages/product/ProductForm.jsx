@@ -110,7 +110,13 @@ function ProductForm(props) {
             />
           </div>
           <Controls.Button
-            text={recordsForEdit !== null ? "Update" : "Add"}
+            text={
+              recordsForEdit !== null ? (
+                <FormattedMessage id="btn.update" defaultMessage="Update" />
+              ) : (
+                <FormattedMessage id="btn.add" defaultMessage="Add" />
+              )
+            }
             type="submit"
             className="w-100 btn btn-danger custom-btn"
           />

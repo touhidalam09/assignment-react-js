@@ -8,5 +8,9 @@
   "users.userTable": "ব্যবহারকারী টেবিল",
   "product.productTable": "পণ্য টেবিল",
   "product.addNewProduct": "নতুন যোগ করুন পণ্য",
-  "product.updateProduct": "হালনাগাদ পণ্য"
+  "product.updateProduct": "হালনাগাদ পণ্য",
+  "product.addNew": "নতুন যোগ করুন",
+  "product.cancel": "বাতিল",
+  "btn.add": "যোগ করুন",
+  "btn.update": "হালনাগাদ"
 }

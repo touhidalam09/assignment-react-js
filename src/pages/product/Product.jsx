@@ -11,6 +11,7 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+import { FormattedMessage } from "react-intl";
 
 const headerCells = [
   { id: "#", label: "#" },
@@ -110,7 +111,13 @@ function Product(props) {
     <>
       <div className="py-2 d-flex justify-content-end">
         <Controls.Button
-          text={setLocationTrue ? "Add New" : "Cancel"}
+          text={
+            setLocationTrue ? (
+              <FormattedMessage id="product.addNew" defaultMessage="add new" />
+            ) : (
+              <FormattedMessage id="product.cancel" defaultMessage="cancel" />
+            )
+          }
           type="button"
           className="btn btn-secondary btn-sm opacity"
           onClick={handleBtnView}

@@ -8,5 +8,9 @@
     "users.userTable": "User Table",
     "product.productTable": "Product Table",
     "product.addNewProduct": "Add new product",
-    "product.updateProduct": "Update product"
+    "product.updateProduct": "Update product",
+    "product.addNew": "Add New",
+    "product.cancel": "Cancel",
+    "btn.add": "Add",
+    "btn.update" : "Update"
   }
