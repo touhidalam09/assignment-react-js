@@ -1,9 +1,25 @@
 import React from "react";
+import Controls from "../controls/controls";
+import { useUserAuth } from "../../context/UserAuthContext";
 
-function Header(props) {
+function Header() {
+  const { user, logOut } = useUserAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      window.alert(error.message);
+    }
+  };
   return (
-    <div>
-      <h1>Header</h1>
+    <div className="header d-flex align-items-center justify-content-end">
+      <h6>Welcome, {user && user.email}</h6> &nbsp;
+      <Controls.Button
+        className="btn btn-info"
+        text="Logout"
+        onClick={handleSignOut}
+      />
     </div>
   );
 }
