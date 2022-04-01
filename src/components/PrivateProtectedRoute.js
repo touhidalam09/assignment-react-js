@@ -4,8 +4,7 @@ import { useUserAuth } from "../context/UserAuthContext";
 import Dashboard from "../pages/Dashboard";
 
 function PrivateProtectedRoute(props) {
-  // let {user} = useUserAuth();
-  let user = true;
+  let { user } = useUserAuth();
 
   return user ? <Dashboard /> : <Navigate to="/" />;
 }
