@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import Controls from "../../components/controls/controls";
 import { UseForm, Form } from "../../components/controls/UseForm";
+import { FormattedMessage } from "react-intl";
 
 const initializeValue = {
   id: null,
@@ -36,7 +37,17 @@ function ProductForm(props) {
     <>
       <div className="p-5 card">
         <h5 className="text-muted">
-          {recordsForEdit !== null ? "Update Product" : "Add new Product"}
+          {recordsForEdit !== null ? (
+            <FormattedMessage
+              id="product.updateProduct"
+              defaultMessage="Update Product"
+            />
+          ) : (
+            <FormattedMessage
+              id="product.addNewProduct"
+              defaultMessage="Add new product"
+            />
+          )}
         </h5>
         <Form onSubmit={handleSubmit} className="mt-4">
           <div className="form-group mb-4">

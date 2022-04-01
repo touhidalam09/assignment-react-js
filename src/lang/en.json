@@ -1,0 +1,12 @@
+{
+    "header.welcome": "Welcome, ",
+    "header.logout": "Logout",
+    "sidebar.assignment": "Assignment",
+    "sidebar.user": "User",
+    "sidebar.product": "Product",
+    "sidebar.language": "language",
+    "users.userTable": "User Table",
+    "product.productTable": "Product Table",
+    "product.addNewProduct": "Add new product",
+    "product.updateProduct": "Update product"
+  }

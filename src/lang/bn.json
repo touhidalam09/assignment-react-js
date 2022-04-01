@@ -1,0 +1,12 @@
+{
+  "header.welcome": "স্বাগত, ",
+  "header.logout": "প্রস্থান",
+  "sidebar.assignment": "হস্তান্তরকরণ",
+  "sidebar.user": "ব্যবহারকারী",
+  "sidebar.product": "পণ্য",
+  "sidebar.language": "ভাষা",
+  "users.userTable": "ব্যবহারকারী টেবিল",
+  "product.productTable": "পণ্য টেবিল",
+  "product.addNewProduct": "নতুন যোগ করুন পণ্য",
+  "product.updateProduct": "হালনাগাদ পণ্য"
+}

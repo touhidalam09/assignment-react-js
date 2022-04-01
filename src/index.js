@@ -4,19 +4,24 @@ import "./index.css";
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import WrapperLang from "./context/WrapperLang";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 process.env.NODE_ENV !== "development"
   ? root.render(
       <React.StrictMode>
         <BrowserRouter>
-          <App />
+          <WrapperLang>
+            <App />
+          </WrapperLang>
         </BrowserRouter>
       </React.StrictMode>
     )
   : root.render(
       <BrowserRouter>
-        <App />
+        <WrapperLang>
+          <App />
+        </WrapperLang>
       </BrowserRouter>
     );
 
