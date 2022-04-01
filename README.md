@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+## Assignmnt Tasks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Demo:: https://react-authentication-softz.web.app/
 
-## Available Scripts
+## About this Website
+> This website is created by React JS for frontend & Bootstrap and use FireBase for backend.
+##### Feature of this website: 
+  > - It has login and registration feature. and all the data will save into db.
+  > - after registration or login, user redirects to dashboard.
+  > - client has to have a private routing. If user is not logged into the application, and try to go to dashboard page, it redirect to login page automatically for authentication. If user don't have account he can go to sign up page and register himself. and after authentication it also redirect to previous page. By the way, each login page and registration page must have a hyperlink to travel between.
+  > - dashboard contains a sidebar, and main content area. 
+  > - there will be a user page, and a product page in dashboard. In user page, he can see all the registered user list. 
+  > - In product page, show all the products from server. he can also create update and delete products form the list.
+  > - It contains a drop-down in sidebar area to translate the application in at least two languages.
 
-In the project directory, you can run:
 
-### `npm start`
+ 
+ ## Deploy by Firebase hosting using github Action CI/CD
+ - ### Before deploy every time run :
+    ```
+    git add .
+    git commit -m "message"
+    git push origin main
+    ```
+    ```
+    npm rum build
+    ```
+    ```
+    firebase deploy
+    ```
+   
+## Third Party Package
+ - ### React JS :
+    ```
+    npx create-react-app /my-app
+    ```
+    ```
+ - ### React-router-dom v6: 
+    ```
+    npm install react-router-dom@6
+    ```
+  - ### Firebase: 
+    ```
+    npm install firebase
+    ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Branch Details
+  - ### `main :`
+    - Initialize setup project
+  - ### `uiDesign :`
+    - Login Page, Registration page, dashboard, user page, product page , product form etc.
+  - ### `fireBase :`
+    - fireBase use for backend, CRUD operation, login, registration, authentication, hosting.
