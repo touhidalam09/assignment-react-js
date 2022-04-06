@@ -1,6 +1,10 @@
 ## Assignmnt Tasks
 
 ## Live Demo:: https://react-authentication-softz.web.app/
+> Register 
+> goto Dashboard
+> you can see register Users
+> you can manage product
 
 ## About this Website
 > This website is created by React JS for frontend & Bootstrap and use FireBase for backend.
